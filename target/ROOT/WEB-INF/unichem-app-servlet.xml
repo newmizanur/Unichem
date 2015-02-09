@@ -50,5 +50,6 @@
 
     <!-- Import beans that varies based on environment -->
     <import resource="beans/beans-dev-configuration.xml"/>
+    <import resource="beans/beans-openshift-configuration.xml"/>
 
 </beans>
