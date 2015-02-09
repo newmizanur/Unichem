@@ -30,11 +30,11 @@
     </http>
 
     <authentication-manager id="ucAuthenticationManager">
-        <authentication-provider ref="ucAuthenticationProvider">
+        <authentication-provider user-service-ref="UCUserDetailsService" >
+            <password-encoder hash="bcrypt" />
         </authentication-provider>
     </authentication-manager>
 
-    <beans:bean id="ucAuthenticationProvider" class="com.unichem.provider.UCAuthenticationProvider"/>
     <beans:bean id="ucAuthenticationSuccessHandler" class="com.unichem.provider.UCAuthenticationSuccessHandler"/>
 
 </beans:beans>
