@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 09, 2015 at 04:15 AM
+-- Generation Time: Feb 09, 2015 at 04:42 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.3.26
 
@@ -29,7 +29,7 @@ USE `dev_db`;
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `username` varchar(45) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `password` varchar(60) NOT NULL,
   `enabled` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`username`)
@@ -40,8 +40,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`username`, `password`, `enabled`) VALUES
-('admin', '$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y', 1),
-('user', '$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y', 1);
+('admin@unichem.com', '$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y', 1),
+('user@unichem.com', '$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y', 1);
 
 -- --------------------------------------------------------
 
@@ -51,7 +51,7 @@ INSERT INTO `users` (`username`, `password`, `enabled`) VALUES
 
 CREATE TABLE IF NOT EXISTS `user_roles` (
   `user_role_id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(45) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `ROLE` varchar(45) NOT NULL,
   PRIMARY KEY (`user_role_id`),
   UNIQUE KEY `uni_username_role` (`ROLE`,`username`),
@@ -63,9 +63,9 @@ CREATE TABLE IF NOT EXISTS `user_roles` (
 --
 
 INSERT INTO `user_roles` (`user_role_id`, `username`, `ROLE`) VALUES
-(2, 'admin', 'ROLE_ADMIN'),
-(1, 'admin', 'ROLE_USER'),
-(3, 'user', 'ROLE_USER');
+(2, 'admin@unichem.com', 'ROLE_ADMIN'),
+(1, 'admin@unichem.com', 'ROLE_USER'),
+(3, 'user@unichem.com', 'ROLE_USER');
 
 --
 -- Constraints for dumped tables
