@@ -33,8 +33,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6788991" vertical-offset="4948" max-vertical-offset="5960">
-              <caret line="277" column="49" selection-start-line="277" selection-start-column="49" selection-end-line="277" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.5749705" vertical-offset="5153" max-vertical-offset="6000">
+              <caret line="282" column="60" selection-start-line="282" selection-start-column="60" selection-end-line="282" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -777,7 +777,7 @@
       <changelist id="3324f401-c2da-47a5-b2df-20b5ba31ade8" name="Default" comment="" />
       <created>1423476869998</created>
       <updated>1423476869998</updated>
-      <workItem from="1423476870817" duration="15006000" />
+      <workItem from="1423476870817" duration="15645000" />
     </task>
     <task id="LOCAL-00001" summary="remove un-nes constructor">
       <created>1423492607342</created>
@@ -787,7 +787,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15006000" />
+    <option name="totallyTimeSpent" value="15645000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1099,8 +1099,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6788991" vertical-offset="4948" max-vertical-offset="5960">
-          <caret line="277" column="49" selection-start-line="277" selection-start-column="49" selection-end-line="277" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.5749705" vertical-offset="5153" max-vertical-offset="6000">
+          <caret line="282" column="60" selection-start-line="282" selection-start-column="60" selection-end-line="282" selection-end-column="60" />
           <folding />
         </state>
       </provider>
