@@ -1,7 +1,5 @@
 package com.unichem.model.entity;
 
-import com.sun.istack.internal.Nullable;
-
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -37,7 +35,6 @@ public class User {
     private String logo;
 
     @Column(name = "createdate")
-    @Nullable
     private Date createDate;
 
     @Column(name = "enabled", nullable = false)
