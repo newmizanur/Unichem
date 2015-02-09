@@ -34,6 +34,12 @@ public class User {
     @Size(max = 500)
     private String logo;
 
+
+    @Column(name = "phone")
+    @Size(max = 15)
+    private String phone;
+
+
     @Column(name = "createdate")
     private Date createDate;
 
@@ -94,6 +100,14 @@ public class User {
 
     public void setLogo(String logo) {
         this.logo = logo;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public Date getCreateDate() {

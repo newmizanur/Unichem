@@ -14,18 +14,18 @@
 
     <http use-expressions="true" auto-config="true" authentication-manager-ref="ucAuthenticationManager" pattern="/**">
 
-        <intercept-url pattern="/login**" access="permitAll" />
+        <intercept-url pattern="/account/login**" access="permitAll" />
 
 
         <intercept-url pattern="/**" access="hasAnyRole('ROLE_USER')"/>
         <intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_ADMIN')"/>
 
         <form-login
-                login-page='/login'
+                login-page='/account/login'
 
-                authentication-failure-url="/login?error=true" authentication-success-handler-ref="ucAuthenticationSuccessHandler"/>
+                authentication-failure-url="/account/login?error=true" authentication-success-handler-ref="ucAuthenticationSuccessHandler"/>
 
-        <logout logout-success-url="/login" />
+        <logout logout-success-url="/account/login" />
         <access-denied-handler error-page="/403" />
     </http>
 
