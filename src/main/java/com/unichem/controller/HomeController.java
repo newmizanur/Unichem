@@ -16,7 +16,7 @@ public class HomeController extends BaseController{
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String home(Model model){
 
-        return "demoTemplate";
+        return "homeTemplate";
     }
 
 }

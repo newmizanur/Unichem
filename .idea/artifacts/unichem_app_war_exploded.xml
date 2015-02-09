@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="unichem-app:war exploded">
-    <output-path>$PROJECT_DIR$/target/unichem-app</output-path>
+    <output-path>$PROJECT_DIR$/target/ROOT</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="unichem-app/web/Web" />
       <element id="directory" name="WEB-INF">
