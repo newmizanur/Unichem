@@ -1,6 +1,10 @@
 package com.unichem.model.entity;
 
+import com.sun.istack.internal.Nullable;
+
 import javax.persistence.*;
+import javax.validation.constraints.Size;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,27 +20,34 @@ public class User {
             nullable = false, length = 60)
     private String password;
 
+    @Column(name = "fullname",
+            nullable = false, length = 100)
+    private String fullName;
+
+    @Column(name = "secretquestion")
+    @Size(max = 150)
+    private String secretQuestion;
+
+    @Column(name = "secretanswer")
+    @Size(max = 150)
+    private String secretAnswer;
+
+    @Column(name = "logo")
+    @Size(max = 500)
+    private String logo;
+
+    @Column(name = "createdate")
+    @Nullable
+    private Date createDate;
+
     @Column(name = "enabled", nullable = false)
     private boolean enabled;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private Set<UserRole> userRole = new HashSet<UserRole>();
 
 
     public User() {
-    }
-
-    public User(String username, String password, boolean enabled) {
-        this.username = username;
-        this.password = password;
-        this.enabled = enabled;
-    }
-
-    public User(String username, String password,
-                boolean enabled, Set<UserRole> userRole) {
-        this.username = username;
-        this.password = password;
-        this.enabled = enabled;
-        this.userRole = userRole;
     }
 
 
@@ -54,6 +65,46 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getSecretQuestion() {
+        return secretQuestion;
+    }
+
+    public void setSecretQuestion(String secretQuestion) {
+        this.secretQuestion = secretQuestion;
+    }
+
+    public String getSecretAnswer() {
+        return secretAnswer;
+    }
+
+    public void setSecretAnswer(String secretAnswer) {
+        this.secretAnswer = secretAnswer;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
     public boolean isEnabled() {
