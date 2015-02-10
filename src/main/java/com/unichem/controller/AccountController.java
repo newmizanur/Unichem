@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Date;
+import java.util.List;
 
 
 @Controller
@@ -53,6 +55,14 @@ public class AccountController extends BaseController {
         return "homeTemplate";
     }
 
+    @RequestMapping(value = "/summary", method = RequestMethod.GET)
+    public String getAccountsSummary(Model model){
+        List<UserModel> accounts = userService.getAccounts();
+        model.addAttribute("accounts",accounts);
+
+        return "accountsSummary";
+    }
+
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     public String getCreateUser(Model model){
 
@@ -64,7 +74,8 @@ public class AccountController extends BaseController {
 
 
     @RequestMapping(value = "/create", method = RequestMethod.POST,headers = "content-type=multipart/*")
-    public String createUser(Model model,@ModelAttribute("user") @Valid UserModel userModel,@RequestParam("file") MultipartFile file,BindingResult result){
+    public String createUser(Model model,@ModelAttribute("user") @Valid UserModel userModel,
+                             @RequestParam("file") MultipartFile file,BindingResult result,HttpServletRequest request){
 
         if(result.hasErrors()){
 
@@ -72,18 +83,21 @@ public class AccountController extends BaseController {
             return "createAccount";
         }
 
-        String fileName = this.saveFile(userModel,file);
+        String fileName = this.saveFile(userModel,file,request.getSession().getServletContext().getRealPath(""));
         if(isPhotoRequired && fileName.isEmpty()){
             model.addAttribute("userMessage","Please check upload file.");
             return "createAccount";
         }
         userModel.setLogo(fileName);
-        userService.createUser(userModel);
+        if(userService.createUser(userModel)){
+            model.addAttribute("userMessage","Account created successfully.");
+            return "redirect:/";
+        }
 
-        return "redirect:/";
+        return "createAccount";
     }
 
-    private String saveFile(UserModel userModel, MultipartFile file) {
+    private String saveFile(UserModel userModel, MultipartFile file,String realPath) {
         if (!file.isEmpty()) {
             try {
                 CommonsMultipartFile actualFile =  (CommonsMultipartFile)file;
@@ -92,8 +106,8 @@ public class AccountController extends BaseController {
                 byte[] bytes = file.getBytes();
 
                 // Creating the directory to store file
-                String rootPath = System.getProperty("catalina.home");
-                File dir = new File(rootPath + File.separator + "tmpFiles");
+                String rootPath = realPath.concat(File.separator +"contents" + File.separator +"img"+File.separator);//System.getProperty("catalina.home");
+                File dir = new File(realPath);//(rootPath + File.separator + "tmpFiles");
                 if (!dir.exists())
                     dir.mkdirs();
 

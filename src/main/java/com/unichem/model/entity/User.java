@@ -1,6 +1,9 @@
 package com.unichem.model.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.HashSet;
@@ -9,7 +12,14 @@ import java.util.Set;
 @Entity
 @Table(name = "users")
 public class User {
+
     @Id
+    @Column(name = "id", unique = true,
+            nullable = false, length = 20)
+    @GenericGenerator(name = "generator", strategy = "guid", parameters = {})
+    @GeneratedValue(generator = "generator")
+    private String id;
+
     @Column(name = "username", unique = true,
             nullable = false, length = 45)
     private String username;
@@ -34,6 +44,9 @@ public class User {
     @Size(max = 500)
     private String logo;
 
+    @Column(name = "email")
+    @Size(max = 20)
+    private String email;
 
     @Column(name = "phone")
     @Size(max = 15)
@@ -46,9 +59,17 @@ public class User {
     @Column(name = "enabled", nullable = false)
     private boolean enabled;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user",cascade = { CascadeType.ALL,CascadeType.PERSIST,CascadeType.MERGE })
+    @Column(nullable = false)
     private Set<UserRole> userRole = new HashSet<UserRole>();
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public User() {
     }
@@ -100,6 +121,14 @@ public class User {
 
     public void setLogo(String logo) {
         this.logo = logo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPhone() {

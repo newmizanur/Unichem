@@ -17,13 +17,13 @@
                 <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> User<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-user-md fa-fw"></i> Users<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href='<c:url value="/account/create" />'>Create</a>
+                        <a href='<c:url value="/account/summary" />'><i class="fa fa-table fa-fw"></i>Summary</a>
                     </li>
                     <li>
-                        <a href='<c:url value="/account/create" />'>Edit</a>
+                        <a href='<c:url value="/account/create" />'><i class="fa fa-pencil fa-fw"></i>Create</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

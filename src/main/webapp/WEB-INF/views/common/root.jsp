@@ -22,6 +22,12 @@
     <!-- MetisMenu CSS -->
     <link href="/contents/<c:out value='${applicationVersion}'/>/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
+    <!-- DataTables CSS -->
+    <link href="/contents/<c:out value='${applicationVersion}'/>/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="/contents/<c:out value='${applicationVersion}'/>/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="/contents/<c:out value='${applicationVersion}'/>/dist/css/sb-admin-2.css" rel="stylesheet">
 
@@ -67,6 +73,10 @@
 
 <!-- Metis Menu Plugin JavaScript -->
 <script src="/contents/<c:out value='${applicationVersion}'/>/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+<!-- DataTables JavaScript -->
+<script src="/contents/<c:out value='${applicationVersion}'/>/bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
+<script src="/contents/<c:out value='${applicationVersion}'/>/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
 <script src="/contents/<c:out value='${applicationVersion}'/>/dist/js/sb-admin-2.js"></script>

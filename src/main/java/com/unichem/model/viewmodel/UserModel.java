@@ -1,12 +1,14 @@
 package com.unichem.model.viewmodel;
 
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 /**
  * Created by admin on 2/10/2015.
  */
 public class UserModel {
 
+    private String id;
     @NotNull
     private String username;
     private String password;
@@ -14,10 +16,21 @@ public class UserModel {
     private String secretQuestion;
     private String secretAnswer;
     private String logo;
+    private String email;
     private String phone;
+    private Date createDate;
+    private boolean enabled;
     private String[] roles;
 
     private String[] appRoles;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
@@ -67,12 +80,36 @@ public class UserModel {
         this.logo = logo;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getPhone() {
         return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     public String[] getRoles() {
