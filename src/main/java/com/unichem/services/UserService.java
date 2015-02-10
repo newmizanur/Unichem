@@ -51,10 +51,12 @@ public class UserService extends BaseService{
         String[] roles = userModel.getRoles();
         if(roles!=null && roles.length > 0){
             for(String role:roles){
-                rolesEntity.add(new UserRole(user,role));
+
+                UserRole userRole = new UserRole();
+                userRole.setRole(role);
+                user.getUserRole().add(userRole);
             }
         }
-        user.setUserRole(rolesEntity);
 
         return user;
     }

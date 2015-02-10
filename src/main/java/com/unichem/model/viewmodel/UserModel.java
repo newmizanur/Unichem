@@ -1,10 +1,13 @@
 package com.unichem.model.viewmodel;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * Created by admin on 2/10/2015.
  */
 public class UserModel {
 
+    @NotNull
     private String username;
     private String password;
     private String fullName;
