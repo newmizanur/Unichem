@@ -11,7 +11,9 @@
     </definition>
 
     <definition name="loginRootTemplate" template="/WEB-INF/views/common/loginroot.jsp">
+    </definition>
 
+    <definition name="publicRootTemplate" template="/WEB-INF/views/common/publicRoot.jsp">
     </definition>
 
 </tiles-definitions>

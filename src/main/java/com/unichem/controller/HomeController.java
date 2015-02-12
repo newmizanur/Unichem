@@ -15,6 +15,12 @@ public class HomeController extends BaseController{
     private HomeService homeService;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
+    public String publicHome(Model model){
+
+        return "publicRootTemplate";
+    }
+
+    @RequestMapping(value = "/admin/home", method = RequestMethod.GET)
     public String home(Model model){
 
         return "homeTemplate";

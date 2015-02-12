@@ -15,7 +15,7 @@ public class UCAuthenticationSuccessHandler extends SimpleUrlAuthenticationSucce
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String redirectUrl = "/";
+        String redirectUrl = "/admin/home";
         if (auth != null) {
 
         }

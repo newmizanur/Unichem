@@ -18,11 +18,11 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form:form role="form" commandName="user" enctype="multipart/form-data">
+                            <form:form role="form" cssClass="validate-form" commandName="user" enctype="multipart/form-data">
                                 <div class="col-lg-6">
-                                    <div class="form-group has-error">
+                                    <div class="form-group">
                                         <label class="control-label">User Name</label>
-                                        <form:input path="username" cssClass="form-control"
+                                        <form:input required="true" path="username" cssClass="form-control"
                                                     placeholder="Enter user name"/>
                                     </div>
 
@@ -85,8 +85,8 @@
 
                                 </div>
                                 <div class="col-lg-12">
-                                    <button type="submit" class="btn btn-default">Create</button>
-                                    <button type="reset" class="btn btn-default">Reset</button>
+                                    <button type="submit" class="btn btn-outline btn-success">Create</button>
+                                    <button type="reset" class="btn btn-outline btn-default">Reset</button>
                                 </div>
                             </form:form>
                         </div>

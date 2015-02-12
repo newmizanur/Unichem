@@ -9,6 +9,7 @@
 
     <http pattern="/contents/**" security="none"/>
     <http pattern="/favicon.ico" security="none"/>
+    <http pattern="/" security="none"/>
 
 
 
